@@ -264,6 +264,7 @@
 
   function showInfo(buildingName) {
     document.getElementById('modalTitle').innerText = buildingName;
+	document.getElementById('modalDesc').innerHTML = buildingData[buildingName] || '目前尚無此大樓的詳細資訊。';
     document.getElementById('overlay').style.display = 'block';
     document.getElementById('infoModal').style.display = 'block';
   }
