@@ -11,22 +11,13 @@
     padding: 20px;
     background-color: #DEBE8A;
   }
-
-/* 針對 modal 裡面的圖片進行設定 */
-  .modal img {
-    
-    margin-top: 1px; /* 跟上面的文字保持距離 */
-    
-    /* 如果圖片改小了，想讓它置中對齊，可以把下面這兩行前方的註解拿掉 */
-    /* display: block; */
-    /* margin-left: auto; margin-right: auto; */
+	.modal img {
+    margin-top: 1px; 
   }
-
-/* 建立一個左右分欄的容器 */
-  .two-column-layout {
-    display: flex;       /* 啟動橫向排版魔法 */
-    gap: 20px;           /* 左右兩欄中間的空隙 */
-    align-items: flex-start; /* 讓兩邊的內容都靠上對齊 */
+	.two-column-layout {
+    display: flex;      
+    gap: 20px;           
+    align-items: flex-start; 
   }
 
   /* 左邊的欄位 */
@@ -48,33 +39,21 @@
     background-color: #fff;
   }
 
-/* 針對彈出視窗的「標題」進行設定 */
-  #modalTitle {
-    /* 1. 調整標題與「下方內文」的距離 (數字越大，離越遠) */
+  #modalTitle {    
     margin-bottom: 15px; 
-    
-    /* 2. 調整標題與「視窗頂端」的距離 
-       (預設標題上方會自帶一點空白，如果你想讓它更靠上，可以設為 0) */
     margin-top: -10px; 
-    
-    /* 3. 調整標題本身的「行高」 (如果標題太長折行，可以拉大這個數字) */
     line-height: 1.5; 
   }
-
-/* 讓彈出視窗裡面的圖片自動縮放，不會超過視窗寬度 */
   .modal img {
     max-width: 100%;
     height: auto;
-    margin-top: 1px; /* 讓圖片跟上面的文字保持一點距離 */
+    margin-top: 1px; 
   }
-
   .map-image {
     width: 100%;
     height: auto;
     display: block;
   }
-
-  /* 這裡使用的是圓形小紅點，如果你想改成隱形方塊，可以參考我們之前的對話修改這裡 */
   .building-marker {
     position: absolute;
     width: 25px;
@@ -92,8 +71,6 @@
     transform: translate(-50%, -50%) scale(1.2);
     background-color: rgba(255, 214, 10, 0.9);
   }
-
-  /* 彈出視窗相關設定 */
   .overlay {
     display: none;
     position: fixed;
@@ -153,8 +130,6 @@
 </div>
 
 <script>
-  // 【第二步：大樓資訊資料庫增加到 5 筆】
-  // 請確保這裡的名稱與上面 onclick="showInfo('名稱')" 裡面的字完全一樣
   const buildingData = {
     'playground': `
       <div class="two-column-layout">
@@ -248,7 +223,7 @@
           </div>
           <div style="margin-bottom: 25px;">
             <img src="identityv.jpg" style="width: 30px; height: 30px; object-fit: cover; border-radius: 8px; vertical-align: middle; margin-right: 15px;">
-            <span style="opacity : 0.3;">⭐⭐⭐⭐</span>⭐
+            <span style="opacity : 0.3;">⭐⭐⭐</span>⭐⭐
           </div>
         </div>
 
@@ -283,14 +258,12 @@
 	<div style="font-size: 90px; text-align: center; margin-top: -15px;">
             🚮
         </div>
-
       </div>
     `,
   };
 
   function showInfo(buildingName) {
     document.getElementById('modalTitle').innerText = buildingName;
-    document.getElementById('modalDesc').innerHTML = buildingData[buildingName] || '目前尚無此大樓的詳細資訊。';
     document.getElementById('overlay').style.display = 'block';
     document.getElementById('infoModal').style.display = 'block';
   }
