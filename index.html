@@ -124,7 +124,6 @@
 <div class="overlay" id="overlay" onclick="closeModal()"></div>
 <div class="modal" id="infoModal">
   <h2 id="modalTitle">大樓名稱</h2>
-  <p id="modalDesc">這裡會顯示大樓的詳細介紹...</p>
   <button class="close-btn" onclick="closeModal()">close</button>
 </div>
 
@@ -231,12 +230,10 @@
 	<div style="font-size: 90px; text-align: center; margin-top: -15px;">
             🥉
         </div>
-
       </div>
     `,
     'our classroom':  `
       <div class="two-column-layout">
-        
         <div class="col-left">
           <div style="margin-bottom: 25px;">
             <img src="speedtest.jpg" style="width: 30px; height: 30px; object-fit: cover; border-radius: 8px; vertical-align: middle; margin-right: 15px;">
@@ -251,20 +248,17 @@
             <span style="opacity : 0.3;">⭐⭐⭐⭐⭐</span>
           </div>
         </div>
-
         <div class="col-right">
           <strong>🏆 RANKING：</strong><br><br>
 	<div style="font-size: 90px; text-align: center; margin-top: -15px;">
             🚮
         </div>
-
       </div>
     `,
   };
 
   function showInfo(buildingName) {
     document.getElementById('modalTitle').innerText = buildingName;
-    document.getElementById('modalDesc').innerHTML = buildingData[buildingName] || '目前尚無此大樓的詳細資訊。';
     document.getElementById('overlay').style.display = 'block';
     document.getElementById('infoModal').style.display = 'block';
   }
